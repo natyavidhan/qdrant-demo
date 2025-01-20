@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Qdrant Demo</title>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            height: 100vh;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(22, 22, 22);
+            color: white;
+        }
+
+        input {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: 1fr;
+            text-align: center;
+        }
+        .input {
+            display: grid;
+            grid-template-columns: 2fr auto auto;
+            gap: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Qdrant Demo</h1>
+        <div class="input">
+            <input type="text" id="query" placeholder="Search for a startup">
+            <select name="city" id="city">
+                <option value='Paris'>Paris</option>
+                <option value='London'>London</option>
+                <option value='Santiago'>Santiago</option>      
+                <option value='Moscow'>Moscow</option>
+                <option value='Melbourne'>Melbourne</option>    
+                <option value='Berlin'>Berlin</option>
+                <option value='Los Angeles'>Los Angeles</option>
+                <option value='Washington DC'>Washington DC</option>
+                <option value='New Delhi'>New Delhi</option>
+                <option value='New York'>New York</option>
+                <option value='Sydney'>Sydney</option>
+                <option value='Singapore'>Singapore</option>
+                <option value='Boulder'>Boulder</option>
+                <option value='Chicago'>Chicago</option>
+                <option value='Vancouver'>Vancouver</option>
+                <option value='Montréal'>Montréal</option>
+                <option value='Bangalore'>Bangalore</option>
+                <option value='Hong Kong'>Hong Kong</option>
+                <option value='Atlanta'>Atlanta</option>
+                <option value='Houston'>Houston</option>
+                <option value='Stockholm'>Stockholm</option>
+                <option value='Boston'>Boston</option>
+                <option value='Tokyo'>Tokyo</option>
+                <option value='Tel Aviv'>Tel Aviv</option>
+                <option value='San Francisco'>San Francisco</option>
+                <option value='Seattle'>Seattle</option>
+                <option value='Munich'>Munich</option>
+                <option value='Toronto'>Toronto</option>
+                <option value='Sao Paulo'>Sao Paulo</option>
+                <option value='Austin'>Austin</option>
+            </select>
+            <button onclick="search()">Search</button>
+        </div>
+    </div>
+</body>
+</html>

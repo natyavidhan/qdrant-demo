@@ -8,7 +8,7 @@ load_dotenv()
 
 class HybridSearcher:
     DENSE_MODEL = "sentence-transformers/all-MiniLM-L6-v2"
-    SPARSE_MODEL = "prithivida/Splade_PP_en_v1"
+
     def __init__(self, collection_name):
         self.collection_name = collection_name
         

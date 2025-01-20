@@ -2,7 +2,6 @@ from qdrant_client import QdrantClient
 import os
 from dotenv import load_dotenv
 import json
-from qdrant_client.models import Distance, VectorParams, PointStruct
 
 load_dotenv()
 def main():
@@ -36,6 +35,6 @@ def main():
         metadata=metadata,
         parallel=0
     )
-    
+
 if __name__ == "__main__":
     main()
