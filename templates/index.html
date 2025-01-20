@@ -31,7 +31,50 @@
             grid-template-columns: 2fr auto auto;
             gap: 10px;
         }
+
+        table {
+            width: 100%;
+            margin-top: 2rem;
+            border-collapse: collapse;
+            max-width: 56rem;
+        }
+
+        th, td {
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
     </style>
+    <script>
+        async function search() {
+            const query = document.getElementById('query').value;
+            const city = document.getElementById('city').value;
+            let data = await fetch(`/api/search?q=${query}&city=${city}`)
+                .then(response => response.json())
+                .then(data => data);
+            // console.log(data);
+            const table = document.querySelector('.table');
+            table.innerHTML = `
+            <tr>
+                <th>Name</th>
+                <th>City</th>
+                <th>Description</th>
+                <th>Alt</th>
+                <th>Link</th>
+            </tr>
+            `;
+            data.forEach(item => {
+                const row = document.createElement('tr');
+                row.innerHTML = `
+                    <td>${item.name}</td>
+                    <td>${item.city}</td>
+                    <td>${item.document}</td>
+                    <td>${item.alt}</td>
+                    <td><a href="${item.link}" target="_blank">Link</a></td>
+                `;
+                table.appendChild(row);
+            });
+        }
+    </script>
 </head>
 <body>
     <div class="container">
@@ -72,6 +115,15 @@
             </select>
             <button onclick="search()">Search</button>
         </div>
+        <table class="table">
+            <tr>
+                <th>Name</th>
+                <th>City</th>
+                <th>Description</th>
+                <th>Alt</th>
+                <th>Link</th>
+            </tr>
+        </table>
     </div>
 </body>
 </html>
